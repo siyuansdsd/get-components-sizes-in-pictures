@@ -8,6 +8,7 @@ import cv2
 
 
 # method to find the midpoint of two point
+# which is for the last step to draw the frame of the target.
 def find_mid_point(pointA: tuple, pointB: tuple):
     return (pointA[0] + pointB[0]) * 0.5, (pointA[1] + pointB[1]) * 0.5
 
@@ -22,6 +23,7 @@ image = cv2.imread(args["image"])
 ruler_image = cv2.imread("ruler.jpeg")
 
 # mix the image
+# mix the ruler image into the image which is being detected.
 imageROI = np.ones((280, 300, 3))
 imageROI = ruler_image[0:280, 0:300]
 image[40:320, 10:310] = imageROI
